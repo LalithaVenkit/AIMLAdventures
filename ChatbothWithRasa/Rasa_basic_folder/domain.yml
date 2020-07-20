@@ -1,0 +1,95 @@
+actions:
+- action_check_location
+- action_search_restaurants
+- action_send_email
+- utter_ask_cuisine
+- utter_ask_email
+- utter_ask_howcanhelp
+- utter_ask_location
+- utter_ask_price
+- utter_default
+- utter_email_query
+- utter_goodbye
+- utter_greet
+- utter_sent_mail
+entities:
+- cuisine
+- email
+- location
+- people
+- price
+- validtier
+intents:
+- give_email
+- greet
+- restaurant_search
+- deny
+- affirm
+- goodbye
+- stop
+responses:
+  utter_ask_cuisine:
+  - buttons:
+    - payload: Chinese
+      title: 1. Chinese
+    - payload: Mexican
+      title: 2. Mexican
+    - payload: Italian
+      title: 3. Italian
+    - payload: American
+      title: 4. American
+    - payload: Thai
+      title: 5. Thai
+    - payload: North Indian
+      title: 6. North Indian
+    - payload: South Indian
+      title: 7. South Indian
+    text: What kind of cuisine would you like to have?
+  utter_ask_email:
+  - text: What email id should I send to?
+  utter_ask_howcanhelp:
+  - text: How can I help you?
+  - text: How can I be of assistance?
+  - text: How may I help you?
+  utter_ask_location:
+  - text: In what location?
+  utter_ask_price:
+  - buttons:
+    - payload: low
+      title: Lesser than Rs.300
+    - payload: mid
+      title: Rs. 300 to 700
+    - payload: high
+      title: More than 700
+    text: What's the average budget for two people?
+  utter_default:
+  - text: Sorry, I cannot understand
+  utter_email_query:
+  - text: Should I send you details of all the restaurants on email?
+  utter_goodbye:
+  - text: goodbye :(
+  - text: Bye-bye
+  - text: Adios amigo!
+  utter_greet:
+  - text: Hey there! How may I help you?
+  - text: Hi, How can I help you!
+  - text: Hey, How is it going. How may I help you today?
+  utter_sent_mail:
+  - text: Sent. Bon Appetite!
+  - text: Sent. Bye!
+  - text: Email is on its way. Bon Appetite!
+  - text: Done! Have a good day.
+session_config:
+  carry_over_slots_to_new_session: false
+  session_expiration_time: 10
+slots:
+  cuisine:
+    type: text
+  email:
+    type: text
+  location:
+    type: text
+  price:
+    type: text
+  validtier:
+    type: bool
